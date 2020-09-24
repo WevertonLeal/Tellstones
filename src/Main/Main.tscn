@@ -1,3 +1,206 @@
-[gd_scene format=2]
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/table_stones.png" type="Texture" id=1]
+[ext_resource path="res://src/stones/crown_stone.png" type="Texture" id=2]
+[ext_resource path="res://src/stones/flag_stone.png" type="Texture" id=3]
+[ext_resource path="res://src/stones/hammer_stone.png" type="Texture" id=4]
+[ext_resource path="res://src/stones/scale_stone.png" type="Texture" id=5]
+[ext_resource path="res://src/stones/knight_stone.png" type="Texture" id=6]
+[ext_resource path="res://src/stones/shield_stone.png" type="Texture" id=7]
+[ext_resource path="res://src/stones/sword_stone.png" type="Texture" id=8]
+[ext_resource path="res://src/Main/Main.gd" type="Script" id=9]
+[ext_resource path="res://src/point.png" type="Texture" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 247.85
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 246.021
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -244, 0 )
+scale = Vector2( 1.25, 1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Crown" type="StaticBody2D" parent="."]
+position = Vector2( 960, 150 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Crown"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crown"]
+shape = SubResource( 1 )
+
+[node name="Flag" type="StaticBody2D" parent="."]
+position = Vector2( 700, 150 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Flag"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
+shape = SubResource( 2 )
+
+[node name="Hammer" type="StaticBody2D" parent="."]
+position = Vector2( 440, 150 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Hammer"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hammer"]
+shape = SubResource( 1 )
+
+[node name="Knight" type="StaticBody2D" parent="."]
+position = Vector2( 180, 150 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Knight"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knight"]
+shape = SubResource( 1 )
+
+[node name="Scale" type="StaticBody2D" parent="."]
+position = Vector2( 1220, 150 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Scale"]
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale"]
+shape = SubResource( 1 )
+
+[node name="Shield" type="StaticBody2D" parent="."]
+position = Vector2( 1480, 150 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Shield"]
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shield"]
+shape = SubResource( 1 )
+
+[node name="Sword" type="StaticBody2D" parent="."]
+position = Vector2( 1740, 150 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Sword"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
+shape = SubResource( 1 )
+
+[node name="Score" type="StaticBody2D" parent="."]
+position = Vector2( 1723.35, 975.615 )
+scale = Vector2( 0.25, 0.2 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Score"]
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Score"]
+shape = SubResource( 1 )
+
+[node name="Score2" type="StaticBody2D" parent="."]
+position = Vector2( 165.077, 979.04 )
+scale = Vector2( 0.25, 0.2 )
+input_pickable = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Score2"]
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Score2"]
+shape = SubResource( 1 )
+
+[node name="First" type="Position2D" parent="."]
+position = Vector2( 180, 540 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="Second" type="Position2D" parent="."]
+position = Vector2( 440, 540 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="Third" type="Position2D" parent="."]
+position = Vector2( 700, 540 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="Fourth" type="Position2D" parent="."]
+position = Vector2( 960, 540 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="Fifth" type="Position2D" parent="."]
+position = Vector2( 1220, 540 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="Sixth" type="Position2D" parent="."]
+position = Vector2( 1480, 540 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+
+[node name="Seventh" type="Position2D" parent="."]
+position = Vector2( 1740, 540 )
+__meta__ = {
+"_gizmo_extents_": 0.0
+}
+[connection signal="mouse_entered" from="Crown" to="." method="_on_Crown_mouse_entered"]
+[connection signal="mouse_exited" from="Crown" to="." method="_on_Crown_mouse_exited"]
+[connection signal="mouse_entered" from="Flag" to="." method="_on_Flag_mouse_entered"]
+[connection signal="mouse_exited" from="Flag" to="." method="_on_Flag_mouse_exited"]
+[connection signal="mouse_entered" from="Hammer" to="." method="_on_Hammer_mouse_entered"]
+[connection signal="mouse_entered" from="Knight" to="." method="_on_Knight_mouse_entered"]
+[connection signal="mouse_entered" from="Scale" to="." method="_on_Scale_mouse_entered"]
+[connection signal="mouse_entered" from="Shield" to="." method="_on_Shield_mouse_entered"]
+[connection signal="mouse_entered" from="Sword" to="." method="_on_Sword_mouse_entered"]
+[connection signal="mouse_entered" from="Score" to="." method="_on_Score_mouse_entered"]
+[connection signal="mouse_entered" from="Score2" to="." method="_on_Score2_mouse_entered"]
